@@ -3,8 +3,8 @@ import Img from 'gatsby-image';
 import React from 'react';
 import SEO from 'react-seo-component';
 import styled from 'styled-components';
-import { Layout } from '../components/layout/Layout';
-import { useSiteMetadata } from '../hooks/useSiteMetadata';
+import { Layout } from '@components/layout/Layout';
+import { useSiteMetadata } from '@hooks/useSiteMetadata';
 
 const IndexWrapper = styled.main``;
 

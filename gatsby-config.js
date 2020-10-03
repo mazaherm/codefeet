@@ -16,6 +16,22 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@src': 'src',
+          '@components': 'src/components',
+          '@hooks': 'src/hooks',
+          '@pages': 'src/pages',
+          '@templates': 'src/templates',
+          '@utils': 'src/utils',
+        },
+        extensions: [
+          "js",
+        ],
+      }
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],

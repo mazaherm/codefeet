@@ -1,6 +1,6 @@
 import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
-import Code from './src/components/pageElements/Code';
+import Code from '@components/pageElements/Code';
 
 const components = {
   'p.inlineCode': props => (
