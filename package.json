@@ -7,7 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "gatsby develop -p 8000 -o",
     "build": "gatsby build",
-    "serve": "gatsby serve -p 8080 -o"
+    "serve": "gatsby serve -p 8080 -o",
+    "lint": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn lint"
+    }
   },
   "keywords": [],
   "author": "",
@@ -16,6 +23,7 @@
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
     "babel-plugin-styled-components": "^1.11.1",
+    "eslint-config-airbnb": "^18.2.0",
     "gatsby": "^2.24.63",
     "gatsby-image": "^2.4.20",
     "gatsby-plugin-alias-imports": "^1.0.5",
@@ -33,5 +41,10 @@
     "react-live": "^2.2.2",
     "react-seo-component": "^2.0.2",
     "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.20.0",
+    "husky": "^4.3.0"
   }
 }
