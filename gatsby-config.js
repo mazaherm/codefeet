@@ -9,7 +9,14 @@ const siteMetadata = {
   authorName: `Mazaher Muraj`,
 }
 
+const navBar = {
+  allPosts: `All Posts`,
+  search: `Search`,
+  about: `About`,
+}
+
 module.exports = {
+  navBar,
   siteMetadata: siteMetadata,
   plugins: [
     `gatsby-plugin-styled-components`,
