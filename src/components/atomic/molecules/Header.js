@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { useSiteMetadata } from '@hooks/useSiteMetadata';
 
-export const Header = () => {
+const Header = () => {
   const { title, description } = useSiteMetadata();
   return (
     <Link to='/'>
@@ -11,3 +11,5 @@ export const Header = () => {
     </Link>
   )
 };
+
+export default Header;
