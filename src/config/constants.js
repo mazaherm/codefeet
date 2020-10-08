@@ -1,5 +1,5 @@
 export const mainNavLinks = [
-  {to: '/', text: 'About'},
-  {to: '/', text: 'Tutorials'},
-  {to: '/', text: 'All Posts'}
+  {to: '/about', text: 'About'},
+  {to: '/tutorials', text: 'Tutorials'},
+  {to: '/all-posts', text: 'All Posts'}
 ];
