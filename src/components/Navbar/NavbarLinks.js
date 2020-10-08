@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 const StyledLink = styled(props => <Link {...props} />)`
   margin: 0 0.5em;
-  color: #2f3640;
+  color: $text-primary;
   font-size: 1.125em;
   font-weight: 600;
   text-decoration: none;
@@ -20,12 +20,12 @@ const StyledLink = styled(props => <Link {...props} />)`
   }
 `;
 
-const NavbarLinks = () => (
+const NavbarLinks = ({ links }) => (
+  links.map(link => (
     <>
-      <StyledLink to="/">About</StyledLink>
-      <StyledLink to="/">Tutorials</StyledLink>
-      <StyledLink to="/">All Posts</StyledLink>
+      <StyledLink to={link.to}>{link.text}</StyledLink>
     </>
-);
+  ))
+)
 
 export default NavbarLinks;

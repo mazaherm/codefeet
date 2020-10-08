@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import NavbarLinks from '@components/Navbar/NavbarLinks';
 import styled from 'styled-components';
 
+import { mainNavLinks } from '@config/constants';
+
 const Navigation = styled.nav`
-  height: 20vh;
+  height: 10vh;
   display: flex;
-  /* background-color: #f5f6fa; */
   justify-content: flex-end;
   text-transform: uppercase;
   border-bottom: 2px solid #2f3640;
@@ -32,7 +33,7 @@ const Toggle = styled.div`
     display: flex;
   }
 `;
-const Navbox = styled.div`
+const NavContainer = styled.div`
   display: flex;
   height: 100%;
   justify-content: flex-end;
@@ -94,13 +95,13 @@ const Navbar = () => {
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </Toggle>
       {navbarOpen ? (
-        <Navbox>
-          <NavbarLinks />
-        </Navbox>
+        <NavContainer>
+          <NavbarLinks links={mainNavLinks} />
+        </NavContainer>
       ) : (
-        <Navbox open>
-          <NavbarLinks />
-        </Navbox>
+        <NavContainer open>
+          <NavbarLinks links={mainNavLinks} />
+        </NavContainer>
       )}
     </Navigation>
   )
