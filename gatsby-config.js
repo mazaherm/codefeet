@@ -46,6 +46,7 @@ module.exports = {
           '@pages': 'src/pages',
           '@templates': 'src/templates',
           '@utils': 'src/utils',
+          '@config': 'src/config',
         },
         extensions: [
           "js",
