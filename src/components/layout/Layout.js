@@ -4,6 +4,8 @@ import { useSiteMetadata } from '@hooks/useSiteMetadata';
 import Header from '@atomic/molecules/Header';
 import Navbar from '@components/Navbar';
 
+import { mainNavLinks } from '@config/constants';
+
 import "@styles/main.scss";
 
 const AppStyle = styled.main`
@@ -15,7 +17,7 @@ const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
     <AppStyle>
-      <Navbar />
+      <Navbar links={mainNavLinks} hasBottomBorder />
       <Header siteTitle={title} siteDescription={description} />
       {children}
     </AppStyle>
