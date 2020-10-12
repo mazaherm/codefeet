@@ -11,7 +11,17 @@ const Navigation = styled.nav`
   margin: 0 auto;
   z-index: 2;
   align-self: center;
+  background-color: #f5f6fa;
   border-bottom: ${props => props.hasBottomBorder ? '2px solid #2f3640' : ''};
+
+  @media (max-width: 768px) {	
+    position: sticky;	
+    height: 8vh;	
+    top: 0;	
+    left: 0;	
+    right: 0;	
+    left: 0;	
+  }
 `;
 const Toggle = styled.div`
   display: none;
