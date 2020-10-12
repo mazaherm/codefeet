@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: `Codefeet`,
   description: `My coding blog`,
-  image: `/default-site-image.jpg`,
+  image: `/images/codefeet-logo.png`,
   siteUrl: `https://codefeet.com`,
   siteLanguage: `en-GB`,
   siteLocale: `en_gb`,
@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         start_url: `/`,
-        icon: `src/images/codefeet-logo.png`,
+        icon: `/images/codefeet-logo.png`,
       },
     },
     {
@@ -45,6 +45,7 @@ module.exports = {
           '@hooks': 'src/hooks',
           '@pages': 'src/pages',
           '@templates': 'src/templates',
+          '@images': 'src/images',
           '@utils': 'src/utils',
           '@config': 'src/config',
         },

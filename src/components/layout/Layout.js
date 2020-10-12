@@ -16,7 +16,6 @@ const Layout = ({ children }) => {
   return (
     <AppStyle>
       <Navbar />
-      <Header siteTitle={title} siteDescription={description} />
       {children}
     </AppStyle>
   );
