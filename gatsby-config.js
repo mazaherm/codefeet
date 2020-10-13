@@ -1,6 +1,6 @@
 const siteMetadata = {
-  title: `Codefeet`,
-  description: `My coding blog`,
+  title: `Code feet`,
+  description: `My blog on frontend development`,
   image: `/images/codefeet-logo.png`,
   siteUrl: `https://codefeet.com`,
   siteLanguage: `en-GB`,
@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         start_url: `/`,
-        icon: `src/images/codefeet-logo.png`,
+        icon: `src/images/cf.svg`,
       },
     },
     {

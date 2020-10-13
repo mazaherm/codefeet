@@ -16,7 +16,7 @@ const Navigation = styled.nav`
 
   @media (max-width: 768px) {	
     position: sticky;	
-    height: 8vh;	
+    height: 10vh;	
     top: 0;	
     left: 0;	
     right: 0;	
@@ -53,7 +53,7 @@ const NavBox = styled.div`
     padding-top: 10vh;
     background-color: #f5f6fa;
     transition: all 0.3s ease-in;
-    top: 8vh;
+    top: 15vh;
     left: ${props => (props.open ? "-100%" : "0")};
   }
 `;

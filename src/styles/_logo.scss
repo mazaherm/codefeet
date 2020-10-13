@@ -1,4 +1,27 @@
+@import './variables';
+
 .logo {
-  height: 40px;
-  width: 140px;
+  height: 60px;
+}
+
+.logo-link {
+  text-decoration: none;
+  margin-bottom: 0.5em;
+}
+
+.logo-title {
+  color: $text-secondary;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.logo-desc {
+  text-transform: lowercase;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+  margin: 0;
+  color: $text-primary;
+  width: 300px;
+  font-weight: 600;
 }
