@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         start_url: `/`,
-        icon: `/images/codefeet-logo.png`,
+        icon: `src/images/codefeet-logo.png`,
       },
     },
     {
