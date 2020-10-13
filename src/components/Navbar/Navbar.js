@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import NavbarLinks from '@components/Navbar/NavbarLinks';
 import Logo from '@components/Logo';
 import styled from 'styled-components';
-
-import { mainNavLinks } from '@config/constants';
 
 const Navigation = styled.nav`
   display: flex;
   justify-content: flex-end;
   text-transform: uppercase;
-  border-bottom: 2px solid #2f3640;
   margin: 0 auto 2em 0;
   z-index: 2;
   align-self: center;
+  background-color: #f5f6fa;
+  border-bottom: ${props => props.hasBottomBorder ? '2px solid #2f3640' : ''};
 
-  @media (max-width: 768px) {
-    position: sticky;
-    height: 8vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    left: 0;
+  @media (max-width: 768px) {	
+    position: sticky;	
+    height: 8vh;	
+    top: 0;	
+    left: 0;	
+    right: 0;	
+    left: 0;	
   }
 `;
 const Toggle = styled.div`
@@ -89,23 +89,23 @@ const Hamburger = styled.div`
   }
 `;
 
-const Navbar = () => {
+const Navbar = ({ links, hasBottomBorder }) => {
   const [navbarOpen, setNavbarOpen ] = useState(false);
 
   return (
-    <Navigation>
+    <Navigation hasBottomBorder={hasBottomBorder}>
       {navbarOpen ? (
         <NavContainer>
           <Logo />
           <NavBox>
-            <NavbarLinks links={mainNavLinks} />
+          <NavbarLinks links={links} />
           </NavBox>
         </NavContainer>
       ) : (
         <NavContainer>
           <Logo />
           <NavBox open>
-            <NavbarLinks links={mainNavLinks} />
+          <NavbarLinks links={links} />
           </NavBox>
         </NavContainer>
       )}
@@ -117,6 +117,15 @@ const Navbar = () => {
       </Toggle>
     </Navigation>
   )
+}
+
+Navbar.propTypes = {
+  links: PropTypes.shape({}).isRequired,
+  bottomBorder: PropTypes.bool,
+}
+
+Navbar.defaultProps = {
+  bottomBorder: false,
 }
 
 export default Navbar;

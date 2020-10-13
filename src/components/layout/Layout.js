@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from '@components/Navbar';
 
+import { mainNavLinks } from '@config/constants';
+
 import "@styles/main.scss";
 
 const AppStyle = styled.main`
@@ -12,7 +14,7 @@ const AppStyle = styled.main`
 const Layout = ({ children }) => {
   return (
     <AppStyle>
-      <Navbar />
+      <Navbar links={mainNavLinks} hasBottomBorder />
       {children}
     </AppStyle>
   );
