@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import NavbarLinks from '@components/Navbar/NavbarLinks';
+import Logo from '@components/Logo';
 import styled from 'styled-components';
 
 const Navigation = styled.nav`
-  height: 10vh;
   display: flex;
   justify-content: flex-end;
   text-transform: uppercase;
-  margin: 0 auto;
+  margin: 0 auto 2em 0;
   z-index: 2;
   align-self: center;
   background-color: #f5f6fa;
@@ -35,7 +35,13 @@ const Toggle = styled.div`
 `;
 const NavContainer = styled.div`
   display: flex;
+  align-items: center;
+  width: 100%
+`;
+const NavBox = styled.div`
+  display: flex;
   height: 100%;
+  width: 100%;
   justify-content: flex-end;
   align-items: center;
 
@@ -45,7 +51,7 @@ const NavContainer = styled.div`
     width: 100%;
     justify-content: flex-start;
     padding-top: 10vh;
-    background-color: #fff;
+    background-color: #f5f6fa;
     transition: all 0.3s ease-in;
     top: 8vh;
     left: ${props => (props.open ? "-100%" : "0")};
@@ -88,21 +94,27 @@ const Navbar = ({ links, hasBottomBorder }) => {
 
   return (
     <Navigation hasBottomBorder={hasBottomBorder}>
+      {navbarOpen ? (
+        <NavContainer>
+          <Logo />
+          <NavBox>
+          <NavbarLinks links={links} />
+          </NavBox>
+        </NavContainer>
+      ) : (
+        <NavContainer>
+          <Logo />
+          <NavBox open>
+          <NavbarLinks links={links} />
+          </NavBox>
+        </NavContainer>
+      )}
       <Toggle
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}
       >
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </Toggle>
-      {navbarOpen ? (
-        <NavContainer>
-          <NavbarLinks links={links} />
-        </NavContainer>
-      ) : (
-        <NavContainer open>
-          <NavbarLinks links={links} />
-        </NavContainer>
-      )}
     </Navigation>
   )
 }
