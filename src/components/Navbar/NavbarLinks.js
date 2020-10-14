@@ -20,10 +20,15 @@ const StyledLink = styled(props => <Link {...props} />)`
   }
 `;
 
-const NavbarLinks = ({ links }) => (
+const NavbarLinks = ({ links, className }) => (
   links.map(link => (
     <>
-      <StyledLink to={link.to}>{link.text}</StyledLink>
+      <StyledLink
+        to={link.to}
+        className={className}
+      >
+        {link.text}
+      </StyledLink>
     </>
   ))
 )
