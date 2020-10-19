@@ -14,11 +14,13 @@ const AppStyle = styled.main`
 
 const Layout = ({ children }) => {
   return (
+    <>
+    <Navbar links={mainNavLinks} hasBottomBorder />
     <AppStyle>
-      <Navbar links={mainNavLinks} hasBottomBorder />
       {children}
-      <Footer />
     </AppStyle>
+    <Footer />
+    </>
   );
 }
 
