@@ -12,7 +12,7 @@ const StyledLink = styled(props => <Link {...props} />)`
 
   &:hover {
     border-radius: 0.25em;
-    color: #f5f6fa !important;
+    color: #f5f6fa;
     background-color: #5a78f1;
   }
   &:visited {
