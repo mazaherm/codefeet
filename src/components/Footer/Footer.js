@@ -10,7 +10,7 @@ const Footer = () => {
 
 	const date = new Date();
 
-  return(
+	return(
 		<Container>
 			<Row className="footer-container">
 				<Col className="footer-text-col">
