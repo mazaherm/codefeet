@@ -6,13 +6,9 @@ export const mainNavLinks = [
 
 export const mainFooterLinks = [
   {to: '/', text: 'Home'},
-  {to: '/', text: 'Newsletter'},
+  {to: '/newsletter', text: 'Newsletter'},
   {to: '/all-posts', text: 'All Posts'},
-  {to: '/', text: 'Search'},
+  // {to: '/', text: 'Search'},
   {to: '/about', text: 'About'},
-];
-
-export const mainSocialLinks = [
-  {id: 1, to: 'https://www.github.com', src: 'src/images/GitHub-Mark-64px.png'},
-  {id: 2, to: 'https://www.github.com', src: 'src/images/GitHub-Mark-64px.png'},
+  {to: '/tutorials', text: 'Tutorials'}
 ];
