@@ -41,11 +41,19 @@
   min-width: 60px;
   margin-right: 10px;
   padding-left: 20px;
-  color: #5a78f1;
+  color: $text-secondary;
 }
 
 .social-icon:hover {
   min-height: 35px;
   min-width: 60px;
-  color: #4862c9;
+  color: $icon-hover;
+}
+
+.footer-link-style {
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: none;
+    color: $background-primary !important;
+  }
 }
