@@ -4,13 +4,13 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const SocialIcons = styled.div`
   svg {
+    color: #2f3640;
     min-height: 35px;
     min-width: 55px;
     padding-left: 20px;
-    color: $text-primary;
 
     &:hover {
-      color: $text-secondary;
+      color: #5a78f1;
       transition: ease-in 0.1s;
     }
   }
