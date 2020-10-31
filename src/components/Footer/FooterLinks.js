@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 
-const StyledIcon = styled((props) => <Link {...props} />)`
+const StyledIcon = styled.div`
   margin: 0 0.5em;
   color: $text-primary;
   font-size: 1.125em;
