@@ -8,7 +8,7 @@ const SocialIcons = styled.div`
     min-height: 35px;
     min-width: 55px;
     padding-left: 20px;
-    margin-right: 10px;
+    margin-right: 13px;
 
     &:hover {
       color: #5a78f1;
