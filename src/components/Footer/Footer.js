@@ -6,8 +6,6 @@ import NavbarLinks from "@components/Navbar/NavbarLinks";
 import { mainFooterLinks } from "@config/constants";
 import styled from "styled-components";
 import FooterIcons from "./FooterIcons";
-import { mainSocialLinks } from "@config/constants";
-import FooterLinks from "@components/Footer/FooterLinks";
 
 const FooterBox = styled(Row)`
   border-top: 2px black solid;
@@ -95,7 +93,6 @@ const Footer = () => {
           </FooterLinkText>
           <SocialLink>
             <FooterIcons />
-            <FooterLinks links={mainSocialLinks} />
           </SocialLink>
         </FooterLinkCol>
       </FooterBox>
