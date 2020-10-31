@@ -31,7 +31,7 @@ const FooterTextCol = styled(Col)`
 
 const FooterCopyright = styled.div`
   font-size: 15px;
-  padding-top: 25px;
+  margin-top: 10px;
   margin-bottom: 8px;
 `;
 
@@ -83,7 +83,7 @@ const Footer = () => {
       <FooterBox>
         <FooterTextCol>
           <FooterCopyright>
-            &copy; {date.getFullYear()} Mazaher Muraj
+            &copy; {date.getFullYear()} Codefeet
           </FooterCopyright>
           <FooterLicense>Licensed under CC BY 4.0</FooterLicense>
         </FooterTextCol>

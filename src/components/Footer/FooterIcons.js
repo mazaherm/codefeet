@@ -1,24 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { Link } from "gatsby";
 
-const SocialIcons = styled((props) => <Link {...props} />)`
-  min-height: 35px;
-  min-width: 60px;
-  margin-right: 10px;
-  padding-left: 20px;
-  color: $text-primary;
-
-  &:hover {
+const SocialIcons = styled.div`
+  svg {
     min-height: 35px;
-    min-width: 60px;
-    color: $text-secondary;
-    transition: ease-in 0.1s;
+    min-width: 55px;
+    padding-left: 20px;
+    color: $text-primary;
+
+    &:hover {
+      color: $text-secondary;
+      transition: ease-in 0.1s;
+    }
   }
 `;
 
-const FooterIcons = (props) => {
+const FooterIcons = () => {
   return (
     <SocialIcons>
       <a target="_blank" href="https://github.com/mazaherm/">
