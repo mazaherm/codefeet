@@ -2,11 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledIcon = styled.div`
-  margin: 0 0.5em;
-  color: $text-primary;
-  font-size: 1.125em;
-  font-weight: 600;
-  text-decoration: none;
+  margin-right: 5px;
+  color: #2f3640;
   padding: 0.5em 0.25em;
 
   &:hover {
@@ -15,7 +12,7 @@ const StyledIcon = styled.div`
     background-color: #5a78f1;
   }
   &:visited {
-    color: inherit;
+    color: #2f3640;
   }
 `;
 
