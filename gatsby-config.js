@@ -7,7 +7,7 @@ const siteMetadata = {
   siteLocale: `en_gb`,
   githubUsername: `mazaherm`,
   authorName: `Mazaher Muraj`,
-}
+};
 
 module.exports = {
   siteMetadata: siteMetadata,
@@ -17,12 +17,35 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     {
+      resolve: "gatsby-plugin-prettier-eslint",
+      options: {
+        prettier: {
+          patterns: [
+            // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
+            "**/*.{css,scss,less}",
+            "**/*.{json,json5}",
+            "**/*.{graphql}",
+            "**/*.{md,mdx}",
+            "**/*.{html}",
+            "**/*.{yaml,yml}",
+          ],
+        },
+        eslint: {
+          patterns: "**/*.{js,jsx,ts,tsx}",
+          customOptions: {
+            fix: true,
+            cache: true,
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
           {
             family: `Montserrat`,
-            variants: [`400`, `600`]
+            variants: [`400`, `600`],
           },
         ],
       },
@@ -38,21 +61,19 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          '@src': 'src',
-          '@components': 'src/components',
-          '@atomic': 'src/components/atomic',
-          '@styles': 'src/styles',
-          '@hooks': 'src/hooks',
-          '@pages': 'src/pages',
-          '@templates': 'src/templates',
-          '@images': 'src/images',
-          '@utils': 'src/utils',
-          '@config': 'src/config',
+          "@src": "src",
+          "@components": "src/components",
+          "@atomic": "src/components/atomic",
+          "@styles": "src/styles",
+          "@hooks": "src/hooks",
+          "@pages": "src/pages",
+          "@templates": "src/templates",
+          "@images": "src/images",
+          "@utils": "src/utils",
+          "@config": "src/config",
         },
-        extensions: [
-          "js",
-        ],
-      }
+        extensions: ["js"],
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
