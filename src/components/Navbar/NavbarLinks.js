@@ -1,14 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
 
-const StyledLink = styled(props => <Link {...props} />)`
+const StyledLink = styled((props) => <Link {...props} />)`
   margin: 0 0.5em;
   color: $text-primary;
   font-size: 1.125em;
   font-weight: 600;
   text-decoration: none;
-  padding: 0.50em 0.25em;
+  padding: 0.5em 0.25em;
 
   &:hover {
     border-radius: 0.25em;
@@ -20,17 +20,13 @@ const StyledLink = styled(props => <Link {...props} />)`
   }
 `;
 
-const NavbarLinks = ({ links, className }) => (
-  links.map(link => (
+const NavbarLinks = ({ links, className }) =>
+  links.map((link) => (
     <>
-      <StyledLink
-        to={link.to}
-        className={className}
-      >
+      <StyledLink to={link.to} className={className}>
         {link.text}
       </StyledLink>
     </>
-  ))
-)
+  ));
 
 export default NavbarLinks;
