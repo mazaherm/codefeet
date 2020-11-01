@@ -1,8 +1,8 @@
-import React from 'react';
-import SEO from 'react-seo-component';
-import styled from 'styled-components';
-import Layout from '@components/Layout';
-import { useSiteMetadata } from '@hooks/useSiteMetadata';
+import React from "react";
+import SEO from "react-seo-component";
+import styled from "styled-components";
+import Layout from "@components/Layout";
+import { useSiteMetadata } from "@hooks/useSiteMetadata";
 
 const IndexWrapper = styled.main``;
 
@@ -27,9 +27,7 @@ export default ({ data }) => {
         siteLocale={siteLocale}
         githubUsername={githubUsername}
       />
-      <IndexWrapper>
-        Newsletter
-      </IndexWrapper>
+      <IndexWrapper>Newsletter</IndexWrapper>
     </Layout>
   );
 };

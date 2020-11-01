@@ -1,10 +1,10 @@
-import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
-import React from 'react';
-import SEO from 'react-seo-component';
-import styled from 'styled-components';
-import Layout from '@components/Layout';
-import { useSiteMetadata } from '@hooks/useSiteMetadata';
+import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
+import React from "react";
+import SEO from "react-seo-component";
+import styled from "styled-components";
+import Layout from "@components/Layout";
+import { useSiteMetadata } from "@hooks/useSiteMetadata";
 
 const IndexWrapper = styled.main``;
 
@@ -36,22 +36,18 @@ export default ({ data }) => {
         githubUsername={githubUsername}
       />
       <IndexWrapper>
-        {data.allMdx.nodes.map(
-          ({ id, excerpt, frontmatter, fields }) => (
-            <PostWrapper key={id}>
-              <Link to={fields.slug}>
-                {!!frontmatter.cover ? (
-                  <Image
-                    sizes={frontmatter.cover.childImageSharp.sizes}
-                  />
-                ) : null}
-                <h1>{frontmatter.title}</h1>
-                <p>{frontmatter.date}</p>
-                <p>{excerpt}</p>
-              </Link>
-            </PostWrapper>
-          )
-        )}
+        {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
+          <PostWrapper key={id}>
+            <Link to={fields.slug}>
+              {!!frontmatter.cover ? (
+                <Image sizes={frontmatter.cover.childImageSharp.sizes} />
+              ) : null}
+              <h1>{frontmatter.title}</h1>
+              <p>{frontmatter.date}</p>
+              <p>{excerpt}</p>
+            </Link>
+          </PostWrapper>
+        ))}
       </IndexWrapper>
     </Layout>
   );

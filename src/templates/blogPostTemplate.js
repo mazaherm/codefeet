@@ -1,9 +1,9 @@
-import { graphql, Link } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React from 'react';
-import SEO from 'react-seo-component';
-import Layout from '@components/Layout';
-import { useSiteMetadata } from '@hooks/useSiteMetadata';
+import { graphql, Link } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import React from "react";
+import SEO from "react-seo-component";
+import Layout from "@components/Layout";
+import { useSiteMetadata } from "@hooks/useSiteMetadata";
 
 export default ({ data, pageContext }) => {
   const {
@@ -23,9 +23,7 @@ export default ({ data, pageContext }) => {
         title={title}
         description={excerpt}
         image={
-          cover === null
-            ? `${siteUrl}${image}`
-            : `${siteUrl}${cover.publicURL}`
+          cover === null ? `${siteUrl}${image}` : `${siteUrl}${cover.publicURL}`
         }
         pathname={`${siteUrl}${fields.slug}`}
         siteLanguage={siteLanguage}
