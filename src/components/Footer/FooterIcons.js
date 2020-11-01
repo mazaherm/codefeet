@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import config from "../../config";
+
+const EMAIL = config.EMAIL;
+const GITHUB = config.GITHUB;
+const LINKEDIN = config.LINKEDIN;
 
 const SocialIcons = styled.div`
   svg {
@@ -20,13 +25,13 @@ const SocialIcons = styled.div`
 const FooterIcons = () => {
   return (
     <SocialIcons>
-      <a target="_blank" href="https://github.com/mazaherm/">
+      <a target="_blank" href={GITHUB}>
         <FaGithub />
       </a>
-      <a target="_blank" href="https://uk.linkedin.com/in/mazaher-muraj">
+      <a target="_blank" href={LINKEDIN}>
         <FaLinkedin />
       </a>
-      <a target="_blank" href="mailto:mazaher.muraj@hotmail.co.uk">
+      <a target="_blank" href={`mailto:${EMAIL}`}>
         <FaEnvelope />
       </a>
     </SocialIcons>
