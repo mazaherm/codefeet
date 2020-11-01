@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import NavbarLinks from '@components/Navbar/NavbarLinks';
-import Logo from '@components/Logo';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import NavbarLinks from "@components/Navbar/NavbarLinks";
+import Logo from "@components/Logo";
+import styled from "styled-components";
 
 const Navigation = styled.nav`
   display: flex;
@@ -12,15 +12,16 @@ const Navigation = styled.nav`
   z-index: 2;
   align-self: center;
   background-color: #f5f6fa;
-  border-bottom: ${props => props.hasBottomBorder ? '2px solid #2f3640' : ''};
+  border-bottom: ${(props) =>
+    props.hasBottomBorder ? "2px solid #2f3640" : ""};
 
-  @media (max-width: 768px) {	
-    position: sticky;	
-    height: 10vh;	
-    top: 0;	
-    left: 0;	
-    right: 0;	
-    left: 0;	
+  @media (max-width: 768px) {
+    position: sticky;
+    height: 10vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
   }
 `;
 const Toggle = styled.div`
@@ -36,7 +37,7 @@ const Toggle = styled.div`
 const NavContainer = styled.div`
   display: flex;
   align-items: center;
-  width: 100%
+  width: 100%;
 `;
 const NavBox = styled.div`
   display: flex;
@@ -54,17 +55,17 @@ const NavBox = styled.div`
     background-color: #f5f6fa;
     transition: all 0.3s ease-in;
     top: 15vh;
-    left: ${props => (props.open ? "-100%" : "0")};
+    left: ${(props) => (props.open ? "-100%" : "0")};
   }
 `;
 const Hamburger = styled.div`
   background-color: #111;
   width: 30px;
   height: 3px;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   align-self: center;
   position: relative;
-  transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+  transform: ${(props) => (props.open ? "rotate(-45deg)" : "inherit")};
 
   ::before,
   ::after {
@@ -77,20 +78,20 @@ const Hamburger = styled.div`
   }
 
   ::before {
-    transform: ${props =>
+    transform: ${(props) =>
       props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
     top: -10px;
   }
 
   ::after {
-    opacity: ${props => (props.open ? "0" : "1")};
-    transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
+    opacity: ${(props) => (props.open ? "0" : "1")};
+    transform: ${(props) => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
     top: 10px;
   }
 `;
 
 const Navbar = ({ links, hasBottomBorder }) => {
-  const [navbarOpen, setNavbarOpen ] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
     <Navigation hasBottomBorder={hasBottomBorder}>
@@ -98,14 +99,14 @@ const Navbar = ({ links, hasBottomBorder }) => {
         <NavContainer>
           <Logo />
           <NavBox>
-          <NavbarLinks links={links} />
+            <NavbarLinks links={links} />
           </NavBox>
         </NavContainer>
       ) : (
         <NavContainer>
           <Logo />
           <NavBox open>
-          <NavbarLinks links={links} />
+            <NavbarLinks links={links} />
           </NavBox>
         </NavContainer>
       )}
@@ -116,16 +117,16 @@ const Navbar = ({ links, hasBottomBorder }) => {
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </Toggle>
     </Navigation>
-  )
-}
+  );
+};
 
 Navbar.propTypes = {
   links: PropTypes.shape({}).isRequired,
   bottomBorder: PropTypes.bool,
-}
+};
 
 Navbar.defaultProps = {
   bottomBorder: false,
-}
+};
 
 export default Navbar;
