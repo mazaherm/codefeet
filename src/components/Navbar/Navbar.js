@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import { Container } from "react-bootstrap";
 import NavbarLinks from "@components/Navbar/NavbarLinks";
 import Logo from "@components/Logo";
-import styled from "styled-components";
 
 const Navigation = styled.nav`
   display: flex;
@@ -11,9 +12,10 @@ const Navigation = styled.nav`
   margin: 0 auto 2em 0;
   z-index: 2;
   align-self: center;
-  background-color: #f5f6fa;
-  border-bottom: ${(props) =>
-    props.hasBottomBorder ? "2px solid #2f3640" : ""};
+  ${({ theme }) => `
+    border-bottom: 2px solid ${theme.palette.text.primary};
+    color: ${theme.palette.text.primary};
+  `};
 
   @media (max-width: 768px) {
     position: sticky;
@@ -52,7 +54,7 @@ const NavBox = styled.div`
     width: 100%;
     justify-content: flex-start;
     padding-top: 10vh;
-    background-color: #f5f6fa;
+    ${({ theme }) => `background-color: ${theme.palette.background.primary}`};
     transition: all 0.3s ease-in;
     top: 15vh;
     left: ${(props) => (props.open ? "-100%" : "0")};
@@ -94,29 +96,31 @@ const Navbar = ({ links, hasBottomBorder }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <Navigation hasBottomBorder={hasBottomBorder}>
-      {navbarOpen ? (
-        <NavContainer>
-          <Logo />
-          <NavBox>
-            <NavbarLinks links={links} />
-          </NavBox>
-        </NavContainer>
-      ) : (
-        <NavContainer>
-          <Logo />
-          <NavBox open>
-            <NavbarLinks links={links} />
-          </NavBox>
-        </NavContainer>
-      )}
-      <Toggle
-        navbarOpen={navbarOpen}
-        onClick={() => setNavbarOpen(!navbarOpen)}
-      >
-        {navbarOpen ? <Hamburger open /> : <Hamburger />}
-      </Toggle>
-    </Navigation>
+    <Container>
+      <Navigation hasBottomBorder={hasBottomBorder}>
+        {navbarOpen ? (
+          <NavContainer>
+            <Logo />
+            <NavBox>
+              <NavbarLinks links={links} />
+            </NavBox>
+          </NavContainer>
+        ) : (
+          <NavContainer>
+            <Logo />
+            <NavBox open>
+              <NavbarLinks links={links} />
+            </NavBox>
+          </NavContainer>
+        )}
+        <Toggle
+          navbarOpen={navbarOpen}
+          onClick={() => setNavbarOpen(!navbarOpen)}
+        >
+          {navbarOpen ? <Hamburger open /> : <Hamburger />}
+        </Toggle>
+      </Navigation>
+    </Container>
   );
 };
 
