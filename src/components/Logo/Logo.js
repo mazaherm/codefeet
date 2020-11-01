@@ -4,7 +4,20 @@ import styled from "styled-components";
 import { useSiteMetadata } from "@hooks/useSiteMetadata";
 
 import Image from "@components/atomic/atoms/Image";
-import codefeetLogo from "@images/cf.svg";
+import CodeFeetLogo from "@images/cf.svg";
+
+const StyledImage = styled(Image)`
+  height: 60px;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  margin-bottom: 0.5em;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;
 
 const LogoBox = styled.div`
   display: flex;
@@ -22,18 +35,36 @@ const LogoBoxText = styled.div`
   }
 `;
 
+const StyledHeading = styled.h1`
+  ${({ theme }) => `color: ${theme.palette.text.secondary};`};
+  margin: 0;
+  text-transform: capitalize;
+  line-height: 1;
+`;
+
+const StyledDescriptionText = styled.p`
+  text-transform: lowercase;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+  margin: 0;
+  ${({ theme }) => `color: ${theme.palette.text.primary};`};
+  width: 300px;
+  font-weight: 600;
+`;
+
 const Logo = () => {
   const { title, description } = useSiteMetadata();
   return (
-    <Link to="/" className="logo-link">
+    <StyledLink to="/">
       <LogoBox>
-        <Image src={codefeetLogo} alt={title} className="logo" />
+        <StyledImage src={CodeFeetLogo} alt={title} />
         <LogoBoxText>
-          <h1 className="logo-title">{title}</h1>
-          <p className="logo-desc">{description}</p>
+          <StyledHeading>{title}</StyledHeading>
+          <StyledDescriptionText>{description}</StyledDescriptionText>
         </LogoBoxText>
       </LogoBox>
-    </Link>
+    </StyledLink>
   );
 };
 
