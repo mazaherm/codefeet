@@ -8,3 +8,7 @@ public
 # Other
 .DS_Store
 yarn-error.log
+
+# Secret
+src/config.js
+

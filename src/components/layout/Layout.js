@@ -1,19 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
-import { useSiteMetadata } from '@hooks/useSiteMetadata';
-import { Header } from '@components/molecules/Header';
+import React from "react";
+import styled from "styled-components";
+import Navbar from "@components/Navbar";
+import Footer from "@components/Footer";
+
+import { mainNavLinks } from "@config/constants";
+
+import "@styles/main.scss";
 
 const AppStyle = styled.main`
   width: 800px;
   margin: 0 auto;
 `;
 
-export const Layout = ({ children }) => {
-  const { title, description } = useSiteMetadata();
+const Layout = ({ children }) => {
   return (
-    <AppStyle>
-      <Header siteTitle={title} siteDescription={description} />
-      {children}
-    </AppStyle>
+    <>
+      <Navbar links={mainNavLinks} hasBottomBorder />
+      <AppStyle>{children}</AppStyle>
+      <Footer />
+    </>
   );
-}
+};
+
+export default Layout;
