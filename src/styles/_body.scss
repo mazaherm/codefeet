@@ -1,8 +1,14 @@
 @import "./variables";
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   background-color: #f5f6fa;
   color: $text-primary;
+  overflow-x: hidden;
+  position: relative;
 }
