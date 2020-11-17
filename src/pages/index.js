@@ -1,9 +1,13 @@
-import { graphql, Link } from "gatsby";
-import Img from "gatsby-image";
 import React from "react";
-import SEO from "react-seo-component";
+import { graphql, Link } from "gatsby";
 import styled from "styled-components";
+import Img from "gatsby-image";
+import SEO from "react-seo-component";
+
 import Layout from "@components/Layout";
+import Heading from "@atomic/atoms/Heading";
+import Paragraph from "@atomic/atoms/Paragraph";
+
 import { useSiteMetadata } from "@hooks/useSiteMetadata";
 
 const IndexWrapper = styled.main``;
@@ -13,6 +17,8 @@ const PostWrapper = styled.div``;
 const Image = styled(Img)`
   border-radius: 5px;
 `;
+
+const StyledPostContainer = styled.div``;
 
 export default ({ data }) => {
   const {
@@ -38,14 +44,16 @@ export default ({ data }) => {
       <IndexWrapper>
         {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
           <PostWrapper key={id}>
-            <Link to={fields.slug}>
-              {!!frontmatter.cover ? (
-                <Image sizes={frontmatter.cover.childImageSharp.sizes} />
-              ) : null}
-              <h1>{frontmatter.title}</h1>
-              <p>{frontmatter.date}</p>
-              <p>{excerpt}</p>
-            </Link>
+            <StyledPostContainer>
+              <Link to={fields.slug}>
+                {!!frontmatter.cover ? (
+                  <Image sizes={frontmatter.cover.childImageSharp.sizes} />
+                ) : null}
+                <Heading size={2}>{frontmatter.title}</Heading>
+                <Paragraph>{frontmatter.date}</Paragraph>
+                <Paragraph>{excerpt}</Paragraph>
+              </Link>
+            </StyledPostContainer>
           </PostWrapper>
         ))}
       </IndexWrapper>
