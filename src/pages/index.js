@@ -27,6 +27,11 @@ const StyledImage = styled(Img)`
 `;
 
 const StyledColumn = styled(Col)``;
+const StyledImageContainer = styled(Col)`
+  @media (max-width: 576px) {
+    display: none;
+  }
+`;
 
 const StyledLink = styled(Link)`
   &:hover {
@@ -73,21 +78,21 @@ export default ({ data }) => {
       <IndexWrapper>
         {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
           <StyledContainer>
-            <Row>
-              <StyledColumn xs={8}>
+            <Row style={{ flexWrap: "nowrap" }}>
+              <StyledColumn lg={8} xs={12}>
                 <StyledLink to={fields.slug} key={id}>
                   <StyledHeading>{frontmatter.title}</StyledHeading>
                   <StyledExcerpt>{excerpt}</StyledExcerpt>
                 </StyledLink>
                 <StyledDate>{frontmatter.date}</StyledDate>
               </StyledColumn>
-              <StyledColumn>
+              <StyledImageContainer>
                 {!!frontmatter.cover ? (
                   <StyledImage
                     sizes={frontmatter.cover.childImageSharp.sizes}
                   />
                 ) : null}
-              </StyledColumn>
+              </StyledImageContainer>
             </Row>
           </StyledContainer>
         ))}
