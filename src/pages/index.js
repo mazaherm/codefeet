@@ -4,21 +4,50 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import SEO from "react-seo-component";
 
+import { Container, Row, Col } from "react-bootstrap";
+
 import Layout from "@components/Layout";
-import Heading from "@atomic/atoms/Heading";
-import Paragraph from "@atomic/atoms/Paragraph";
 
 import { useSiteMetadata } from "@hooks/useSiteMetadata";
 
 const IndexWrapper = styled.main``;
 
-const PostWrapper = styled.div``;
-
-const Image = styled(Img)`
-  border-radius: 5px;
+const StyledContainer = styled(Container)`
+  ${({ theme }) => `border-bottom: 1px solid ${theme.palette.text.secondary2}`};
+  padding: 0 0 15px 0;
+  margin: 15px 0;
+  :last-child {
+    border-bottom: none;
+  }
 `;
 
-const StyledPostContainer = styled.div``;
+const StyledImage = styled(Img)`
+  max-width: 250px;
+  width: 100%;
+`;
+
+const StyledColumn = styled(Col)``;
+
+const StyledLink = styled(Link)`
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+const StyledHeading = styled.h2`
+  ${({ theme }) => `color: ${theme.palette.text.primary}`};
+  font-weight: 700;
+`;
+
+const StyledExcerpt = styled.p`
+  ${({ theme }) => `color: ${theme.palette.text.secondary2}`};
+`;
+
+const StyledDate = styled.p`
+  margin: 0;
+  font-size: 13px;
+  ${({ theme }) => `color: ${theme.palette.text.secondary2}`};
+`;
 
 export default ({ data }) => {
   const {
@@ -43,18 +72,24 @@ export default ({ data }) => {
       />
       <IndexWrapper>
         {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
-          <PostWrapper key={id}>
-            <StyledPostContainer>
-              <Link to={fields.slug}>
+          <StyledContainer>
+            <Row>
+              <StyledColumn xs={8}>
+                <StyledLink to={fields.slug} key={id}>
+                  <StyledHeading>{frontmatter.title}</StyledHeading>
+                  <StyledExcerpt>{excerpt}</StyledExcerpt>
+                </StyledLink>
+                <StyledDate>{frontmatter.date}</StyledDate>
+              </StyledColumn>
+              <StyledColumn>
                 {!!frontmatter.cover ? (
-                  <Image sizes={frontmatter.cover.childImageSharp.sizes} />
+                  <StyledImage
+                    sizes={frontmatter.cover.childImageSharp.sizes}
+                  />
                 ) : null}
-                <Heading size={2}>{frontmatter.title}</Heading>
-                <Paragraph>{frontmatter.date}</Paragraph>
-                <Paragraph>{excerpt}</Paragraph>
-              </Link>
-            </StyledPostContainer>
-          </PostWrapper>
+              </StyledColumn>
+            </Row>
+          </StyledContainer>
         ))}
       </IndexWrapper>
     </Layout>
@@ -72,7 +107,7 @@ export const query = graphql`
         excerpt(pruneLength: 250)
         frontmatter {
           title
-          date(formatString: "YYYY MMMM Do")
+          date(formatString: "D MMM YYYY")
           cover {
             publicURL
             childImageSharp {
