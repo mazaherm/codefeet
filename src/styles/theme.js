@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 
 // TEXT
 const textPrimary = "#2f3640";
-const textSecondary = "#586FB4";
+const textSecondary = "#7158e2";
 const textSecondary2 = "#757575";
 const textTertiary = "#f5f6fa";
 // BG
