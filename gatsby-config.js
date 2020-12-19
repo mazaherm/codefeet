@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: `Code feet`,
   description: `Don't get cold feet, get codefeet!`,
-  image: `/images/codefeet-logo.png`,
+  image: `/assets/cf.svg`,
   siteUrl: `https://codefeet.com`,
   siteLanguage: `en-GB`,
   siteLocale: `en_gb`,
@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         start_url: `/`,
-        icon: `src/images/cf.svg`,
+        icon: `src/assets/cf.svg`,
       },
     },
     {
@@ -45,7 +45,7 @@ module.exports = {
           "@hooks": "src/hooks",
           "@pages": "src/pages",
           "@templates": "src/templates",
-          "@images": "src/images",
+          "@assets": "src/assets",
           "@utils": "src/utils",
           "@config": "src/config",
         },
