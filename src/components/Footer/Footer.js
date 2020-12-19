@@ -1,11 +1,20 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import NavbarLinks from "@components/Navbar/NavbarLinks";
-import { mainFooterLinks } from "@config/constants";
 import styled from "styled-components";
+import { Container, Row, Col } from "react-bootstrap";
+
 import FooterIcons from "./FooterIcons";
+
+import NavbarLinks from "@components/Navbar/NavbarLinks";
+import SocialIcons from "@components/SocialIcons";
+
+import { mainFooterLinks } from "@config/constants";
+import links from "@config/links";
+
+import { SiNetlify, SiGatsby } from "react-icons/si";
+
+const CCLICENCE = links.CCLICENCE;
+const GATSBY = links.GATSBY;
+const NETLIFY = links.NETLIFY;
 
 const FooterBox = styled(Row)`
   border-top: 2px black solid;
@@ -14,6 +23,22 @@ const FooterBox = styled(Row)`
     display: flex;
     flex-direction: column;
   }
+`;
+
+const FooterMiddle = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
+
+const PoweredByIcons = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 const FooterTextCol = styled(Col)`
@@ -27,13 +52,13 @@ const FooterTextCol = styled(Col)`
   }
 `;
 
-const FooterCopyright = styled.div`
+const FooterText = styled.div`
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 8px;
 `;
 
-const FooterLicense = styled.div`
+const FooterLicense = styled.a`
   font-size: 13px;
 `;
 
@@ -80,11 +105,18 @@ const Footer = () => {
     <Container>
       <FooterBox>
         <FooterTextCol>
-          <FooterCopyright>
-            &copy; {date.getFullYear()} Codefeet
-          </FooterCopyright>
-          <FooterLicense>Licensed under CC BY 4.0</FooterLicense>
+          <FooterText>&copy; {date.getFullYear()} Codefeet</FooterText>
+          <FooterLicense href={CCLICENCE} target="_blank">
+            Licensed under CC BY 4.0
+          </FooterLicense>
         </FooterTextCol>
+        <FooterMiddle>
+          <FooterText>Powered by</FooterText>
+          <PoweredByIcons>
+            <SocialIcons link={NETLIFY} iconComponent={<SiNetlify />} />
+            <SocialIcons link={GATSBY} iconComponent={<SiGatsby />} />
+          </PoweredByIcons>
+        </FooterMiddle>
         <FooterLinkCol>
           <FooterLinkText>
             <FooterLinkStyle>

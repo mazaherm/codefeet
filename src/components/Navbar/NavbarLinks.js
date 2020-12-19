@@ -14,6 +14,7 @@ const StyledLink = styled((props) => <Link {...props} />)`
     ${({ theme }) => `
       background-color: ${theme.palette.text.secondary};
       color: ${theme.palette.text.tertiary} !important;
+      transition: ease-in 0.1s;
     `};
     border-radius: 0.25em;
     text-decoration: none;
