@@ -6,7 +6,7 @@ import SEO from "react-seo-component";
 
 import { Container, Row, Col } from "react-bootstrap";
 
-import Layout from "./components/Layout";
+import Layout from "@components/Layout";
 
 import { useSiteMetadata } from "@hooks/useSiteMetadata";
 
