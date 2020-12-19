@@ -1,7 +1,7 @@
 import React from "react";
 import SEO from "react-seo-component";
 import styled from "styled-components";
-import Layout from "src/components/Layout";
+import Layout from "./components/Layout";
 import { useSiteMetadata } from "@hooks/useSiteMetadata";
 
 import Heading from "@atomic/atoms/Heading";
