@@ -1,13 +1,11 @@
 export const mainNavLinks = [
   { to: "/about", text: "About" },
-  { to: "https://codefeet.substack.com/subscribe", text: "Newsletter" },
-  { to: "/all-posts", text: "All Posts" },
+  { to: "https://codefeet.substack.com/subscribe", text: "Subscribe" },
 ];
 
 export const mainFooterLinks = [
-  { to: "https://codefeet.substack.com/subscribe", text: "Newsletter" },
-  { to: "/all-posts", text: "All Posts" },
   { to: "/about", text: "About" },
+  { to: "https://codefeet.substack.com/subscribe", text: "Subscribe" },
 ];
 
 export const myTechStack = [
