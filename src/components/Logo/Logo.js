@@ -3,8 +3,8 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { useSiteMetadata } from "@hooks/useSiteMetadata";
 
-import Image from "@components/atomic/atoms/Image";
-import CodeFeetLogo from "@images/cf.svg";
+import Image from "@atomic/atoms/Image";
+import CodeFeetLogo from "@assets/cf.svg";
 
 const StyledImage = styled(Image)`
   height: 60px;
