@@ -2,7 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Image = ({ src, srcSet, alt, className }) => (
-  <img src={src} srcset={srcSet} alt={alt} className={className} />
+  <picture>
+    <source srcset={srcSet} media="(min-width: 700px)"></source>
+    <img src={src} alt={alt} className={className} />
+  </picture>
 );
 
 Image.propTypes = {
