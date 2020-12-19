@@ -12,9 +12,7 @@ import links from "@config/links";
 
 import { SiNetlify, SiGatsby } from "react-icons/si";
 
-const CCLICENCE = links.CCLICENCE;
-const GATSBY = links.GATSBY;
-const NETLIFY = links.NETLIFY;
+const { CCLICENCE, GATSBY, NETLIFY } = links;
 
 const FooterBox = styled(Row)`
   border-top: 2px black solid;

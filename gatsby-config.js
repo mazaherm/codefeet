@@ -1,6 +1,6 @@
 const siteMetadata = {
   title: `Code feet`,
-  description: `My blog on frontend development`,
+  description: `Don't get cold feet, get codefeet!`,
   image: `/images/codefeet-logo.png`,
   siteUrl: `https://codefeet.com`,
   siteLanguage: `en-GB`,

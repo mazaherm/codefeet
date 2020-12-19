@@ -50,7 +50,8 @@ const StyledDescriptionText = styled.p`
   margin: 0;
   ${({ theme }) => `color: ${theme.palette.text.primary};`};
   width: 300px;
-  font-weight: 600;
+  font-weight: 300;
+  font-style: italic;
 `;
 
 const Logo = () => {

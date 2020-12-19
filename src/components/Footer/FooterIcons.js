@@ -8,10 +8,7 @@ import {
 import links from "@config/links";
 import SocialIcon from "@components/SocialIcons";
 
-const GITHUB = links.GITHUB;
-const LINKEDIN = links.LINKEDIN;
-const STACKOVERFLOW = links.STACKOVERFLOW;
-const MEDIUM = links.MEDIUM;
+const { GITHUB, LINKEDIN, STACKOVERFLOW, MEDIUM } = links;
 
 const FooterIcons = () => (
   <>
