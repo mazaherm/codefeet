@@ -8,7 +8,7 @@ import Heading from "@atomic/atoms/Heading";
 import Paragraph from "@atomic/atoms/Paragraph";
 import Image from "@atomic/atoms/Image";
 import List from "@atomic/atoms/List";
-import { Container, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 import SocialIcons from "@components/SocialIcons";
 
